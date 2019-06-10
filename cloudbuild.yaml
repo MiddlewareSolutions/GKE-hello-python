@@ -8,3 +8,7 @@ steps:
   - apply
   - -f
   - deployment.yaml
+  envs:
+  - CLOUDSDK_COMPUTE_REGION: $_REGION
+  - CLOUDSDK_COMPUTE_ZONE: $_ZONE
+  - CLOUDSDK_CONTAINER_CLUSTER: $_CLUSTER_NAME
