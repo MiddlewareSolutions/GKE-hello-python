@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-python
-        image: gcr.io/$PROJECT_ID/hello-python:latest
+        image: hello-python:latest
         ports:
         - containerPort: 8080
