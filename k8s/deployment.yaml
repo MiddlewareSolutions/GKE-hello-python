@@ -19,3 +19,7 @@ spec:
         image: eu.gcr.io/cflmm-proxyapi/hello-python:latest
         ports:
         - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
