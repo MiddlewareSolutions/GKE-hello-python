@@ -4,15 +4,15 @@ steps:
   args: ['fetch', '--unshallow']
 
 # Bluid Docker image
-#- name: 'gcr.io/cloud-builders/docker'
-#  args: [ 'build', '-t', 'eu.gcr.io/$PROJECT_ID/hello-python', '.' ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'eu.gcr.io/$PROJECT_ID/hello-python', '.' ]
 
 # Build with Docker cache 
-- name: 'gcr.io/kaniko-project/executor:latest'
-  args:
-  - --destination=eu.gcr.io/$PROJECT_ID/hello-python
-  - --cache=true
-  - --cache-ttl=5h
+#- name: 'gcr.io/kaniko-project/executor:latest'
+#  args:
+#  - --destination=eu.gcr.io/$PROJECT_ID/hello-python
+#  - --cache=true
+#  - --cache-ttl=5h
 
 # Push into Repository
 - name: 'gcr.io/cloud-builders/docker'
