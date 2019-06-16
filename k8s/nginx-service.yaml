@@ -1,12 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: nginx-deployment
+  namespace: default
 spec:
-  type: LoadBalancer
+  ports:
+  - nodePort: 32639
+    port: 81
+    protocol: TCP
+    targetPort: 80
   selector:
     app: nginx
-  ports:
-  - protocol: TCP
-    port: 60001
-    targetPort: 8080
+  sessionAffinity: None
+  type: LoadBalancer
